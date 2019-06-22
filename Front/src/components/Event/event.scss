@@ -1,0 +1,159 @@
+.button_box {
+  height: 5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  padding-top: 1em;
+
+}
+
+.event-button {
+  margin: 0 .5em;
+  padding: .5em 1.6em;
+  color: #5c4175;
+  background-color: #a186bd;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
+.event-button-inactive {
+  padding: .5em 1.6em;
+  color: #a186bd;
+  background-color: #440e62;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.event-button-inactive:hover {
+  padding: .5em 1.6em;
+  color: #b99bda;
+  background-color: #5c1383;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
+  #watch-event {
+    background-color: #a186bd;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .event {
+
+  &-filter {
+    height: 20em;
+    background-color: black;
+    -webkit-filter: brightness(55%); /* Safari 6.0 - 9.0 */
+    filter: brightness(55%);
+
+    & img {
+      height: 20em;
+      width: 20em;
+      border: 1px solid white;
+      position: relative;
+    }
+  }  
+  
+  &-box {
+    display: flex;
+    margin: 2em 0 2em 0;
+    width: 20em;
+    flex-direction: column;
+  }
+
+  &-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    height: 20em;
+    width: 20em;
+    padding: .5em;
+    position: absolute;
+
+    &-date {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
+
+    &-name {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    &-desc {
+      margin-bottom: 1em;
+    }
+
+    &-numb {
+      font-size: 1.4em;
+    }
+  }
+
+  &-coments {
+    background: white;
+    height: 12em;
+    position: relative;
+  
+  &-list {
+    height: 10em;
+    margin: 0 0 2em 1em;
+    overflow: auto;
+  } 
+
+  &-msg {
+    margin-top: 1em;
+    font-size: .9em;
+  }
+
+  &-user {
+    margin-bottom: .5em;
+    font-weight: bold;
+  }
+  }
+}
+
+#msg {
+  &-form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  }
+
+  &-field {
+    width: 100%;
+    padding-left: .4em;
+    height: 2.2em;
+    border: none;
+    background-color: #7c6091;
+    border: solid 1px #652d8e;
+  }
+}
+
+.vote-event {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #652d8e;
+  height: 3em;
+  color: white;
+}
+
+.icon-up {
+  font-size: 1.6em;
+  cursor: pointer;
+}
+

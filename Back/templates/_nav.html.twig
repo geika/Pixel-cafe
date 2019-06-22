@@ -1,0 +1,52 @@
+{% block body %}
+
+    {# <h1>Administration de Pixel-Coffee</h1>
+
+    <br>
+<br>
+        <h4>Ci dessous vous retrouverez tous les liens qui permette de moderer les contenus de la Base de Donnees de Pixel-Coffee</h4> #}
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="{{ path('main') }}">Moderation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('user_index') }}">Utilisateurs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('role_index') }}">Roles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('type_index') }}">Types</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('product_index') }}">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('console_index') }}">Consoles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('game_index') }}">Jeux</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{{ path('event_index') }}">Evenements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('style_index') }}">Styles</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('comment_index') }}">Commentaires</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('rate_index') }}">Notes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('ranking_index') }}">Places</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+{% endblock %}

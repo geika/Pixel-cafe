@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer Commentaire{% endblock %}
+
+{% block body %}
+    <h1>Editer Commentaire</h1>
+
+    {{ include('backend/comment/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('comment_index') }}">Revenir a la liste</a>
+
+    {{ include('backend/comment/_delete_form.html.twig') }}
+{% endblock %}

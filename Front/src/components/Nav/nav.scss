@@ -1,0 +1,446 @@
+@import 'src/styles/vars';
+
+@media screen and (min-width: 760px) {
+  
+.header {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  padding: 1.7em 2em;
+  width: 100%;
+  height: 800px;
+  background-image: url('../../images/home.jpg');
+  background-size: cover;
+  background-position:center;
+
+  &menu {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 1.7em 2em;
+    width: 100%;
+    height: 300px;
+    background-image: url('../../images/pacman-bar.jpg');
+    background-size: cover;
+    background-position:center;
+  }
+
+  &nos-jeux {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 1.7em 2em;
+    width: 100%;
+    height: 300px;
+    background-image: url('../../images/gaming-zone.jpg');
+    background-size: cover;
+    background-position:center;
+  }
+
+  &reservation {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 1.7em 2em;
+    width: 100%;
+    height: 300px;
+    background-image: url('../../images/reservation.jpg');
+    background-size: cover;
+    background-position:center;
+  }
+
+  &evenement {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 1.7em 2em;
+    width: 100%;
+    height: 300px;
+    background-image: url('../../images/event-header.jpg');
+    background-size: cover;
+    background-position:center;
+  }
+
+  &login {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    padding: 1.7em 2em;
+    width: 100%;
+    height: 300px;
+    background-image: url('../../images/login-header.jpg');
+    background-size: cover;
+    background-position:center;
+}
+}
+
+
+.nav {
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(229,229,229,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(229,229,229,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(229,229,229,0) 100%);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index:9999;
+  padding: 1em 1em;
+}
+
+.logo {
+  margin: 0;
+  width: 160px;
+  height: 40px;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin-top: .3em;
+}
+
+.nav-link li {
+  margin-left: 1em;
+  cursor: pointer;
+}
+
+.nav-login {
+  color: #544741;
+  text-align: center;
+  margin: 0!important;
+
+  &menu {
+    color: #ba6c2e;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &menu:hover {
+    color: #9c4e21;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &nos-jeux {
+    color: #0174ad;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &nos-jeux:hover {
+    color: #06a2f0;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &evenement {
+    color: #652d8e;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &evenement:hover {
+    color: #855fa8;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &login {
+    color: #544741;
+    text-align: center;
+    margin: 0!important;
+  }
+
+  &login:hover {
+    color: #746359;
+    text-align: center;
+    margin: 0!important;
+  }
+}
+
+.nav-login:hover {
+  color: #746359;
+  text-align: center;
+  margin: 0!important;
+}
+
+.login-block {
+  //height: 2em;
+  padding: .5em 1em; 
+  background-color: #c8b29a;
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+
+  &menu {
+    padding: .5em 1em; 
+    background-color: #fcaf5d;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  &menu:hover {
+    padding: .5em 1em; 
+    background-color: #eeb77c;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &nos-jeux {
+    padding: .5em 1em; 
+    background-color: #62c7fa;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &nos-jeux:hover {
+    padding: .5em 1em; 
+    background-color: #8fd3f5;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &evenement {
+    padding: .5em 1em; 
+    background-color: #a186bd;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &evenement:hover {
+    padding: .5em 1em; 
+    background-color: #cfb0f0;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &login {
+    padding: .5em 1em; 
+    background-color: #c8b29a;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &login:hover {
+    padding: .5em 1em; 
+    background-color: #e7ceb3;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.login-block:hover {
+  //height: 2em;
+  padding: .5em 1em; 
+  background-color: #e7ceb3;
+  margin-top: -10px;
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  margin: auto;
+  width: 40%;
+}
+
+.sub-title1 {
+  color: white;
+  text-align: center;
+  font-size: 2.8em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+
+.page-title {
+  color: white;
+  text-align: center;
+  font-size: 2.8em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  margin-top: 3em;
+}
+
+.line {
+  width: 20%;
+  margin: 1.5em auto;
+  border-bottom:3px solid white;
+}
+
+
+
+}
+
+
+@media screen and (max-width: 900px) {
+  .nav-link {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: .96em;
+    text-transform: uppercase;
+    margin-top: .3em;
+  }
+
+}
+
+// CSS Mobile Header //
+
+@media screen and (max-width: 759px) {
+  
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 1.7em 2em;
+    width: 100%;
+    height: 800px;
+    background-image: url('../../images/home.jpg');
+    background-size: cover;
+    background-position:center;
+  
+    &menu {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      padding: 1.7em 2em;
+      width: 100%;
+      height: 300px;
+      background-image: url('../../images/pacman-bar.jpg');
+      background-size: cover;
+      background-position:center;
+    }
+  
+    &nos-jeux {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      padding: 1.7em 2em;
+      width: 100%;
+      height: 300px;
+      background-image: url('../../images/gaming-zone.jpg');
+      background-size: cover;
+      background-position:center;
+    }
+  
+    &reservation {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      padding: 1.7em 2em;
+      width: 100%;
+      height: 300px;
+      background-image: url('../../images/reservation.jpg');
+      background-size: cover;
+      background-position:center;
+    }
+  
+    &evenement {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      padding: 1.7em 2em;
+      width: 100%;
+      height: 300px;
+      background-image: url('../../images/event-header.jpg');
+      background-size: cover;
+      background-position:center;
+    }
+
+    &login {
+      display: flex;
+      flex-direction: column;
+      align-content: space-around;
+      padding: 1.7em 2em;
+      width: 100%;
+      height: 300px;
+      background-image: url('../../images/login-header.jpg');
+      background-size: cover;
+      background-position:center;
+    }
+  }
+  
+  .nav {
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(229,229,229,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(229,229,229,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(229,229,229,0) 100%);
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index:9999;
+    padding: 1em 1em;
+  }
+  
+  .logo {
+    margin: 0;
+    width: 160px;
+    height: 40px;
+  }
+  
+  .nav-link {
+    display: none;
+    flex-direction: row;
+    color: white;
+    font-size: 1.2em;
+    text-transform: uppercase;
+  }
+  
+  .nav-link li {
+    margin-left: 1em;
+    cursor: pointer;
+  }
+  
+  #title {
+    margin: auto;
+    width: 90%;
+  }
+  
+  .sub-title1 {
+    color: white;
+    text-align: center;
+    font-size: 2.8em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+  }
+
+  .page-title {
+    color: white;
+    text-align: center;
+    font-size: 2.8em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+    margin-top: 3em;
+  }
+  
+  .line {
+    width: 20%;
+    margin: 1.5em auto;
+    border-bottom:3px solid white;
+  }
+  
+  .sub-title2 {
+    color: white;
+    text-align: center;
+  }
+  
+  }
+  

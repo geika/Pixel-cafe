@@ -1,0 +1,24 @@
+
+@media screen and (max-width: 759px) {
+
+.slide-menu {
+  cursor: pointer;
+}
+
+.menu {
+  font-family: sans-serif;
+  padding: 1em;
+}
+
+.menu-item {
+  font-size: 2em;
+  margin-top:.5em;
+  cursor: pointer;
+}
+}
+
+@media screen and (min-width: 760px) {
+  .slide-menu {
+    display: none;
+  }
+}

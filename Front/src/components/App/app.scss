@@ -1,0 +1,26 @@
+@import 'src/styles/vars';
+
+.app {
+  background-color: $background-color;
+  height: 100%;
+
+  &nos-jeux {
+    background-color: #029be9;
+    height: 100%;
+  }
+
+  &menu {
+    background-color: #fcaf5d;
+    height: 100%;
+  }
+
+  &login {
+    backGround-color: #746359;
+    height: 100%;
+  }
+
+  &evenement {
+    background-color: #855fa8;
+    height: 100%;
+  }
+}

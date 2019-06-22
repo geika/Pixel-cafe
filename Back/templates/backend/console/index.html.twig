@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Console index{% endblock %}
+
+{% block body %}
+    <h1>Console index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>NbAvailable</th>
+                <th>Brand</th>
+                <th>Image</th>
+                <th>ReleaseDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for console in consoles %}
+            <tr>
+                <td>{{ console.id }}</td>
+                <td>{{ console.name }}</td>
+                <td>{{ console.description }}</td>
+                <td>{{ console.nbAvailable }}</td>
+                <td>{{ console.brand }}</td>
+                <td>{{ console.image }}</td>
+                <td>{{ console.releaseDate ? console.releaseDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('console_show', {'id': console.id}) }}">show</a>
+                    <a href="{{ path('console_edit', {'id': console.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('console_new') }}">Create new</a>
+{% endblock %}

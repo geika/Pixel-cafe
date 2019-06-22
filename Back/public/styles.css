@@ -1,0 +1,14 @@
+
+body
+{
+    background-color : #D1CFCF;
+}
+
+.max-width
+{
+    max-width: 100%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+
+}

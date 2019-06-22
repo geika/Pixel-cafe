@@ -1,0 +1,923 @@
+/*ooooo          .oooooo.     .oooooo.    ooooo ooooo      ooo 
+`888'         d8P'  `Y8b   d8P'  `Y8b   `888' `888b.     `8' 
+ 888         888      888 888            888   8 `88b.    8  
+ 888         888      888 888            888   8   `88b.  8  
+ 888         888      888 888     ooooo  888   8     `88b.8  
+ 888       o `88b    d88' `88.    .88'   888   8       `888  
+o888ooooood8  `Y8bood8P'   `Y8bood8P'   o888o o8o        `8  
+                                                             
+                                                             
+                                                             */
+
+
+@media screen and (max-width: 759px) {
+    .login-global {
+        display: flex;
+    }
+
+    .button-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 3em;
+    }
+
+    .log-button {
+        margin: 0 auto;
+        color: #746359;
+        background-color:#c8b29a;
+        font-weight: bold;
+        padding: .5em 1.6em 1em 0;
+        border: none;
+        font-size: 1em;
+        border-radius: 0px;
+        width: auto;
+    }
+
+    .log-button-inactive {
+        margin: 0;
+        color: #746359;
+        background-color:#372f2d;
+        font-weight: bold;
+        padding: .5em 1.6em;
+        border: none;
+        font-size: 1em;
+        border-radius: 0px;
+        width: auto;
+    }
+
+    #view-page h3 {
+        font-size: 1.3em;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #login-container {
+        background-color: #c8b29a;
+        display: flex;
+        flex-direction: column;
+        //justify-content: space-between;
+        margin: 0 auto;
+        padding: 1.5em;
+        text-align: center;
+    }
+    
+    #view-page {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .button-box {
+        margin: 0 auto;
+        max-width: 60%;
+        text-align: center;
+    }
+    
+    .form-label {
+        font-size: 1em;
+        color: #746359;
+        display: inline-block;
+        position: relative;
+        align-self: start;
+        float: left;
+    }
+    
+    .input {
+        width: 100%;
+        font-weight: 500;
+        color: #544741;
+    }
+    
+    .input:focus {
+        outline-offset: 0;
+        width: 100%;
+        font-weight: 500;
+        color: #544741;
+    }
+    
+    .log-button {
+        margin: 1.5em .5em 0 0;
+        color: #746359;
+        background-color:#c8b29a;
+        font-weight: bold;
+        padding: 1.1em 1.5em;
+        border: none;
+        border-radius: 0px;
+        width: auto;
+    }
+    
+    .log-button-inactive {
+        margin: 1.5em .5em 0 0;
+        color: #746359;
+        background-color:#372f2d;
+        font-weight: bold;
+        padding: 1.1em 1.5em;
+        border: none;
+        border-radius: 0px;
+        width: auto;
+    }
+    
+    .log-button:focus {
+        outline: none;
+    }
+    
+    .log-button-inactive:hover {
+        outline: none;
+        background-color: #544741;
+        color: #c8b29a;
+    }
+    
+    .lostPass-reminder {
+        height: 2.5em;
+        margin: 2em auto;
+    }
+    
+    .lostPass-reminder h3 {
+        margin: .8em auto;
+    }
+    
+    .lostPass-reminder a {
+        margin: .8em auto;
+        cursor: pointer;
+    }
+    
+    .recover-link {
+        font-size: 1.2em;
+    }
+    
+    .recover-link:hover {
+        color: #372f2d;
+    }
+    
+    .error-box {
+        height: 2.5em;
+    
+    }
+    
+    .error-field {
+        position: relative;
+        width: 100%;
+        font-size: 1em;
+        color: #700202;
+        background-color: #fa9494;
+        padding: .5em;
+        border:solid 1px #f04646;
+    }
+    
+    /*ooooo          .oooooo.     .oooooo.    ooooo ooooo      ooo oooooo     oooo ooooo oooooooooooo oooooo   oooooo     oooo 
+    `888'         d8P'  `Y8b   d8P'  `Y8b   `888' `888b.     `8'  `888.     .8'  `888' `888'     `8  `888.    `888.     .8'  
+     888         888      888 888            888   8 `88b.    8    `888.   .8'    888   888           `888.   .8888.   .8'   
+     888         888      888 888            888   8   `88b.  8     `888. .8'     888   888oooo8       `888  .8'`888. .8'    
+     888         888      888 888     ooooo  888   8     `88b.8      `888.8'      888   888    "        `888.8'  `888.8'     
+     888       o `88b    d88' `88.    .88'   888   8       `888       `888'       888   888       o      `888'    `888'      
+    o888ooooood8  `Y8bood8P'   `Y8bood8P'   o888o o8o        `8        `8'       o888o o888ooooood8       `8'      `8'       
+                                                                                                                             
+                                                                                                                             
+                                                                                                                             */
+    
+    
+    .login-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0em auto;
+    }
+    
+    .login-form input {
+        background-color: #ddc9b3;
+        border-color: #746359;
+        margin: .5em 0 .5em 0;
+        padding: 0.5em;
+        text-align: center;
+    }
+    
+    .login-text {
+        margin: 2em 0 3em 0;
+    }
+    
+    .login-text h2 {
+        font-size: 1.7em;
+        margin: .7em;
+    }
+    
+    .loginView-form-button {
+        margin: .5em 0;
+        color: #c8b29a;
+        background-color:#746359;
+        font-weight: bold;
+        padding: 1.1em 1.5em;
+        border: none;
+        border-radius: 0px;
+        width: auto;
+    }
+
+    .loginView-disconnect-button {
+        margin: 2.5em 0;
+        color: #c8b29a;
+        background-color:#746359;
+        font-weight: bold;
+        padding: 1.1em 1.5em;
+        border: none;
+        border-radius: 0px;
+        width: auto;
+    }
+
+    .submit-success-loginview {
+        margin: 2.5em auto;
+        background-color: #86e274;
+        padding: 1em 1em;
+        width: 100%;
+        color: #016801;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+    
+    .connexion-message {
+        height: 1em;
+        margin: .5em;
+    }
+    
+    /*ooooooooo.   oooooooooooo   .oooooo.    ooooo  .oooooo..o ooooooooooooo oooooooooooo ooooooooo.   
+    `888   `Y88. `888'     `8  d8P'  `Y8b   `888' d8P'    `Y8 8'   888   `8 `888'     `8 `888   `Y88. 
+     888   .d88'  888         888            888  Y88bo.           888       888          888   .d88' 
+     888ooo88P'   888oooo8    888            888   `"Y8888o.       888       888oooo8     888ooo88P'  
+     888`88b.     888    "    888     ooooo  888       `"Y88b      888       888    "     888`88b.    
+     888  `88b.   888       o `88.    .88'   888  oo     .d8P      888       888       o  888  `88b.  
+    o888o  o888o o888ooooood8  `Y8bood8P'   o888o 8""88888P'      o888o     o888ooooood8 o888o  o888o 
+                                                                                                      
+                                                                                                      
+                                                                                                      */
+    
+    .register-text {
+        margin: 2em 0 3em 0;
+    }
+    
+    .register-text h2 {
+        font-size: 1.7em;
+        margin: .7em;
+    }
+    
+    .form-error {
+        border-color: 1px solid red;
+    
+    }
+    
+    .register-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0em auto;
+    }
+    
+    .register-form input {
+        background-color: #ddc9b3;
+        border-color: #746359;
+        margin: .5em 0 .5em 0;
+        padding: 0.5em;
+        text-align: center;
+    }
+    
+    .register-form-button {
+        margin: .5em 0 2em 0;
+        color: #c8b29a;
+        background-color:#746359;
+        font-weight: bold;
+        padding: 1.1em 1.5em;
+        border: none;
+        border-radius: 0px;
+        width: auto;
+    }
+
+    .submit-error {
+        background-color: #fa8282;
+        padding: 1em 1em;
+        width: 100%;
+        color: #700202;
+        font-weight: 500;
+    }
+
+    .submit-success {
+        background-color: #86e274;
+        padding: 1em 1em;
+        width: 100%;
+        color: #016801;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+    
+    /*ooooo          .oooooo.    .oooooo..o ooooooooooooo ooooooooo.         .o.        .oooooo..o  .oooooo..o 
+    `888'         d8P'  `Y8b  d8P'    `Y8 8'   888   `8 `888   `Y88.      .888.      d8P'    `Y8 d8P'    `Y8 
+     888         888      888 Y88bo.           888       888   .d88'     .8"888.     Y88bo.      Y88bo.      
+     888         888      888  `"Y8888o.       888       888ooo88P'     .8' `888.     `"Y8888o.   `"Y8888o.  
+     888         888      888      `"Y88b      888       888           .88ooo8888.        `"Y88b      `"Y88b 
+     888       o `88b    d88' oo     .d8P      888       888          .8'     `888.  oo     .d8P oo     .d8P 
+    o888ooooood8  `Y8bood8P'  8""88888P'      o888o     o888o        o88o     o8888o 8""88888P'  8""88888P'  
+                                                                                                             
+                                                                                                             
+                                                                                                             */
+    
+    .recover-text {
+        margin: 2em;
+    }
+    
+    .recover-text h2 {
+        font-size: 1.7em;
+    }
+    
+    .recover-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 2em auto;
+    }
+    
+    .recover-form input {
+        background-color: #ddc9b3;
+        border-color: #746359;
+        margin: 1.1em;
+        padding: 0.5em;
+        text-align: center;
+    }
+    
+    .button-recover {
+        margin: .5em;
+        color: #c8b29a;
+        background-color:#746359;
+        font-weight: bold;
+        padding: 1.1em 1.5em;
+        border: none;
+        border-radius: 0px;
+        width: auto;
+    }
+    
+    
+    .button-recover:focus {
+        outline: none;
+    }
+    
+    .button-recover:hover {
+        outline: none;
+        background-color: #746359;
+    }
+    
+    .button-recover:visited {
+        outline: none;
+        background-color: #c8b29a;
+    }
+    
+    /*oooooooooooo   .oooooo.   ooooooooo.   ooo        ooooo         oooooooooooo ooooooooo.   ooooooooo.   
+    `888'     `8  d8P'  `Y8b  `888   `Y88. `88.       .888'         `888'     `8 `888   `Y88. `888   `Y88. 
+     888         888      888  888   .d88'  888b     d'888           888          888   .d88'  888   .d88' 
+     888oooo8    888      888  888ooo88P'   8 Y88. .P  888           888oooo8     888ooo88P'   888ooo88P'  
+     888    "    888      888  888`88b.     8  `888'   888  8888888  888    "     888`88b.     888`88b.    
+     888         `88b    d88'  888  `88b.   8    Y     888           888       o  888  `88b.   888  `88b.  
+    o888o         `Y8bood8P'  o888o  o888o o8o        o888o         o888ooooood8 o888o  o888o o888o  o888o 
+                                                                                                           
+                                                                                                           
+                                                                                                           */
+    
+    
+    .errors-panel {
+        border: solid 1px red;
+        background-color: #fa8282;
+        color: #5f0202;
+        padding: 2em 0;
+        margin: 1em 0;
+    }
+    
+    // .panel {
+    //     display: none;
+    //     height: 0;
+    // }
+    
+    // .panel-visible {
+    //     display: block;
+    // }
+    
+    /*ooooooooo.   ooooo ooooooooo.   ooooooooo.   ooooo        oooooooooooo 
+    `888   `Y88. `888' `888   `Y88. `888   `Y88. `888'        `888'     `8 
+     888   .d88'  888   888   .d88'  888   .d88'  888          888         
+     888ooo88P'   888   888ooo88P'   888ooo88P'   888          888oooo8    
+     888`88b.     888   888          888          888          888    "    
+     888  `88b.   888   888          888          888       o  888       o 
+    o888o  o888o o888o o888o        o888o        o888ooooood8 o888ooooood8 
+                                                                           
+                                                                           
+                                                                           */
+    
+    
+    .ripple {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s;
+    }
+    
+    .ripple:active:after {
+        transform: scale(0, 0);
+        opacity: .3;
+        transition: 0s;
+    }
+    
+    .ripple-error {
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+    }
+    
+    .ripple-error:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgb(247, 61, 61) 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s;
+    }
+    
+    .ripple-error:active:after {
+        transform: scale(0, 0);
+        opacity: .3;
+        transition: 0s;
+    }
+
+}
+                                                            
+                                                            
+/*                                                            
+                                                            
+ .oooo.o  .ooooo.  oooo d8b  .ooooo.   .ooooo.  ooo. .oo.   
+d88(  "8 d88' `"Y8 `888""8P d88' `88b d88' `88b `888P"Y88b  
+`"Y88b.  888        888     888ooo888 888ooo888  888   888  
+o.  )88b 888   .o8  888     888    .o 888    .o  888   888  
+8""888P' `Y8bod8P' d888b    `Y8bod8P' `Y8bod8P' o888o o888o 
+                                                            
+                                                            
+                                                            */
+/*                   o8o                    ooooooooo   oooooooo  .ooooo.   
+                   `"'                   d"""""""8'  dP""""""" 888' `Y88. 
+ooo. .oo.  .oo.   oooo  ooo. .oo.              .8'  d88888b.   888    888 
+`888P"Y88bP"Y88b  `888  `888P"Y88b            .8'       `Y88b   `Vbood888 
+ 888   888   888   888   888   888           .8'          ]88        888' 
+ 888   888   888   888   888   888          .8'     o.   .88P      .88P'  
+o888o o888o o888o o888o o888o o888o        .8'      `8bd88P'     .oP'     
+                                                                          
+                                                                          
+                                                                          */
+
+@media screen and (min-width: 759px) {
+
+#view-page h3 {
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+}
+
+#login-container {
+    background-color: #c8b29a;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    margin: 0 auto;
+    padding: 1.5em;
+    max-width: 60%;
+    text-align: center;
+}
+
+#view-page {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button-box {
+    margin: 0 auto;
+    max-width: 60%;
+    text-align: center;
+}
+
+.form-label {
+    font-size: 1em;
+    color: #746359;
+    display: inline-block;
+    position: relative;
+    align-self: start;
+    float: left;
+}
+
+.input {
+    width: 100%;
+    font-weight: 500;
+    color: #544741;
+}
+
+.input:focus {
+    outline-offset: 0;
+    width: 100%;
+    font-weight: 500;
+    color: #544741;
+}
+
+.log-button {
+    margin: 1.5em .5em 0 0;
+    color: #746359;
+    background-color:#c8b29a;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 0px;
+    width: auto;
+}
+
+.log-button-inactive {
+    margin: 1.5em .5em 0 0;
+    color: #746359;
+    background-color:#372f2d;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 0px;
+    width: auto;
+}
+
+.log-button:focus {
+    outline: none;
+}
+
+.log-button-inactive:hover {
+    outline: none;
+    background-color: #544741;
+    color: #c8b29a;
+}
+
+.lostPass-reminder {
+    height: 2.5em;
+    margin: 2em auto;
+}
+
+.lostPass-reminder h3 {
+    margin: .8em auto;
+}
+
+.lostPass-reminder a {
+    margin: .8em auto;
+    cursor: pointer;
+}
+
+.recover-link {
+    font-size: 1.2em;
+}
+
+.recover-link:hover {
+    color: #372f2d;
+}
+
+.error-box {
+    height: 2.5em;
+
+}
+
+.error-field {
+    position: relative;
+    width: 100%;
+    font-size: 1em;
+    color: #700202;
+    background-color: #fa9494;
+    padding: .5em;
+    border:solid 1px #f04646;
+}
+
+/*ooooo          .oooooo.     .oooooo.    ooooo ooooo      ooo oooooo     oooo ooooo oooooooooooo oooooo   oooooo     oooo 
+`888'         d8P'  `Y8b   d8P'  `Y8b   `888' `888b.     `8'  `888.     .8'  `888' `888'     `8  `888.    `888.     .8'  
+ 888         888      888 888            888   8 `88b.    8    `888.   .8'    888   888           `888.   .8888.   .8'   
+ 888         888      888 888            888   8   `88b.  8     `888. .8'     888   888oooo8       `888  .8'`888. .8'    
+ 888         888      888 888     ooooo  888   8     `88b.8      `888.8'      888   888    "        `888.8'  `888.8'     
+ 888       o `88b    d88' `88.    .88'   888   8       `888       `888'       888   888       o      `888'    `888'      
+o888ooooood8  `Y8bood8P'   `Y8bood8P'   o888o o8o        `8        `8'       o888o o888ooooood8       `8'      `8'       
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         */
+
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0em auto;
+}
+
+.login-form input {
+    background-color: #ddc9b3;
+    border-color: #746359;
+    margin: .5em 0 .5em 0;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.login-text {
+    margin: 2em 0 3em 0;
+}
+
+.login-text h2 {
+    font-size: 1.7em;
+    margin: .7em;
+}
+
+.loginView-form-button {
+    margin: .5em 0;
+    color: #c8b29a;
+    background-color:#746359;
+    font-weight: bold;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 0px;
+    width: auto;
+}
+
+.submit-success-loginview {
+    margin: 2.5em auto;
+    background-color: #86e274;
+    padding: 1em 1em;
+    width: 100%;
+    color: #016801;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.loginView-disconnect-button {
+    margin: 2em 0;
+    color: #c8b29a;
+    background-color:#746359;
+    font-weight: bold;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 0px;
+    width: auto;
+}
+
+
+.connexion-message {
+    height: 1em;
+    margin: .5em;
+}
+
+/*ooooooooo.   oooooooooooo   .oooooo.    ooooo  .oooooo..o ooooooooooooo oooooooooooo ooooooooo.   
+`888   `Y88. `888'     `8  d8P'  `Y8b   `888' d8P'    `Y8 8'   888   `8 `888'     `8 `888   `Y88. 
+ 888   .d88'  888         888            888  Y88bo.           888       888          888   .d88' 
+ 888ooo88P'   888oooo8    888            888   `"Y8888o.       888       888oooo8     888ooo88P'  
+ 888`88b.     888    "    888     ooooo  888       `"Y88b      888       888    "     888`88b.    
+ 888  `88b.   888       o `88.    .88'   888  oo     .d8P      888       888       o  888  `88b.  
+o888o  o888o o888ooooood8  `Y8bood8P'   o888o 8""88888P'      o888o     o888ooooood8 o888o  o888o 
+                                                                                                  
+                                                                                                  
+                                                                                                  */
+
+.register-text {
+    margin: 2em 0 3em 0;
+}
+
+.register-text h2 {
+    font-size: 1.7em;
+    margin: .7em;
+}
+
+.form-error {
+    border-color: 1px solid red;
+
+}
+
+.register-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0em auto;
+}
+
+.register-form input {
+    background-color: #ddc9b3;
+    border-color: #746359;
+    margin: .5em 0 .5em 0;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.register-form-button {
+    margin: .5em 0 2em 0;
+    color: #c8b29a;
+    background-color:#746359;
+    font-weight: bold;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 0px;
+    width: auto;
+}
+
+.submit-error {
+    background-color: #fa8282;
+    padding: 1em 1em;
+    width: 100%;
+    color: #700202;
+    font-weight: 500;
+}
+
+.submit-success {
+    background-color: #86e274;
+    padding: 1em 1em;
+    width: 100%;
+    color: #016801;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+/*ooooo          .oooooo.    .oooooo..o ooooooooooooo ooooooooo.         .o.        .oooooo..o  .oooooo..o 
+`888'         d8P'  `Y8b  d8P'    `Y8 8'   888   `8 `888   `Y88.      .888.      d8P'    `Y8 d8P'    `Y8 
+ 888         888      888 Y88bo.           888       888   .d88'     .8"888.     Y88bo.      Y88bo.      
+ 888         888      888  `"Y8888o.       888       888ooo88P'     .8' `888.     `"Y8888o.   `"Y8888o.  
+ 888         888      888      `"Y88b      888       888           .88ooo8888.        `"Y88b      `"Y88b 
+ 888       o `88b    d88' oo     .d8P      888       888          .8'     `888.  oo     .d8P oo     .d8P 
+o888ooooood8  `Y8bood8P'  8""88888P'      o888o     o888o        o88o     o8888o 8""88888P'  8""88888P'  
+                                                                                                         
+                                                                                                         
+                                                                                                         */
+
+.recover-text {
+    margin: 2em;
+}
+
+.recover-text h2 {
+    font-size: 1.7em;
+}
+
+.recover-form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 2em auto;
+}
+
+.recover-form input {
+    background-color: #ddc9b3;
+    border-color: #746359;
+    margin: 1.1em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+.button-recover {
+    margin: .5em;
+    color: #c8b29a;
+    background-color:#746359;
+    font-weight: bold;
+    padding: 1.1em 1.5em;
+    border: none;
+    border-radius: 0px;
+    width: auto;
+}
+
+
+.button-recover:focus {
+    outline: none;
+}
+
+.button-recover:hover {
+    outline: none;
+    background-color: #746359;
+}
+
+.button-recover:visited {
+    outline: none;
+    background-color: #c8b29a;
+}
+
+/*oooooooooooo   .oooooo.   ooooooooo.   ooo        ooooo         oooooooooooo ooooooooo.   ooooooooo.   
+`888'     `8  d8P'  `Y8b  `888   `Y88. `88.       .888'         `888'     `8 `888   `Y88. `888   `Y88. 
+ 888         888      888  888   .d88'  888b     d'888           888          888   .d88'  888   .d88' 
+ 888oooo8    888      888  888ooo88P'   8 Y88. .P  888           888oooo8     888ooo88P'   888ooo88P'  
+ 888    "    888      888  888`88b.     8  `888'   888  8888888  888    "     888`88b.     888`88b.    
+ 888         `88b    d88'  888  `88b.   8    Y     888           888       o  888  `88b.   888  `88b.  
+o888o         `Y8bood8P'  o888o  o888o o8o        o888o         o888ooooood8 o888o  o888o o888o  o888o 
+                                                                                                       
+                                                                                                       
+                                                                                                       */
+
+
+.errors-panel {
+    border: solid 1px red;
+    background-color: #fa8282;
+    color: #5f0202;
+    padding: 2em 0;
+    margin: 1em 0;
+}
+
+// .panel {
+//     display: none;
+//     height: 0;
+// }
+
+// .panel-visible {
+//     display: block;
+// }
+
+/*ooooooooo.   ooooo ooooooooo.   ooooooooo.   ooooo        oooooooooooo 
+`888   `Y88. `888' `888   `Y88. `888   `Y88. `888'        `888'     `8 
+ 888   .d88'  888   888   .d88'  888   .d88'  888          888         
+ 888ooo88P'   888   888ooo88P'   888ooo88P'   888          888oooo8    
+ 888`88b.     888   888          888          888          888    "    
+ 888  `88b.   888   888          888          888       o  888       o 
+o888o  o888o o888o o888o        o888o        o888ooooood8 o888ooooood8 
+                                                                       
+                                                                       
+                                                                       */
+
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+.ripple-error {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple-error:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgb(247, 61, 61) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple-error:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+}

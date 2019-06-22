@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Console{% endblock %}
+
+{% block body %}
+    <h1>Console</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ console.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ console.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ console.description }}</td>
+            </tr>
+            <tr>
+                <th>NbAvailable</th>
+                <td>{{ console.nbAvailable }}</td>
+            </tr>
+            <tr>
+                <th>Brand</th>
+                <td>{{ console.brand }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ console.image }}</td>
+            </tr>
+            <tr>
+                <th>ReleaseDate</th>
+                <td>{{ console.releaseDate ? console.releaseDate|date('Y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('console_index') }}">back to list</a>
+
+    <a href="{{ path('console_edit', {'id': console.id}) }}">edit</a>
+
+    {{ include('backend/console/_delete_form.html.twig') }}
+{% endblock %}

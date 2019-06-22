@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ranking index{% endblock %}
+
+{% block body %}
+    <h1>Ranking index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Place</th>
+                <th>Score</th>
+                <th>Reward</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ranking in rankings %}
+            <tr>
+                <td>{{ ranking.id }}</td>
+                <td>{{ ranking.name }}</td>
+                <td>{{ ranking.place }}</td>
+                <td>{{ ranking.score }}</td>
+                <td>{{ ranking.reward }}</td>
+                <td>
+                    <a href="{{ path('ranking_show', {'id': ranking.id}) }}">show</a>
+                    <a href="{{ path('ranking_edit', {'id': ranking.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('ranking_new') }}">Create new</a>
+{% endblock %}

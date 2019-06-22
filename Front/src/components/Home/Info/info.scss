@@ -1,0 +1,118 @@
+@import 'src/styles/vars';
+
+@media screen and (min-width: 640px) {
+
+#info {
+  margin-top: 2.5em;
+  padding: 2em;
+  background-color: $second-background-color;
+  height: 35em;
+  color: white;
+}
+
+.info-title {
+  text-align: center;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.section-info {
+  display: flex;
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+
+    &-bold {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: .7em; 
+      text-transform: capitalize;
+
+      &-horaire {
+        font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 1.5em; 
+      text-transform: capitalize;
+        margin-top: 2em;
+      }
+    }
+
+    &-marg {
+      font-style: italic; 
+      margin-left: 2em;
+      margin-bottom:1em; 
+    }
+  }
+}
+
+.section-info-map {
+  margin-left: 4em;
+  border: 10px solid white;
+  height: 28em;
+  width: 100%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+
+  #info {
+    padding: 1em;
+    background-color: $second-background-color;
+    height: 100%;
+    color: white;
+  }
+  
+  .info-title {
+    text-align: center;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  
+  .section-info {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .section-info-text {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+  }
+  
+  .section-info-text-bold {
+      width: 50%;
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-bottom: 1em; 
+      text-transform: capitalize;
+  }
+  
+  .section-info-text-bold-horaire {
+    width: 100%;
+          font-weight: bold;
+          font-size: 1.2em;
+          margin-bottom: 1.5em; 
+          text-transform: capitalize;
+          margin-top: 2em;
+        }
+      
+  
+    .section-info-text-marg {
+      width: 50%;
+      font-style: italic; 
+      margin-bottom:1em; 
+      text-align: center;
+      }
+  
+  .section-info-map {
+    border: 10px solid white;
+    height: 20em;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+}
+  

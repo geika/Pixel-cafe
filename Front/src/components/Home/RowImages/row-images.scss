@@ -1,0 +1,111 @@
+@import 'src/styles/vars';
+
+@media screen and (min-width: 640px) {
+
+#row-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 2.5em;
+  color: white;
+}
+
+.row-content {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 2em;
+  margin: auto;
+  text-align: center;
+}
+
+.zone {
+  height: 15em;
+  width: 33.3%;
+  background-size: cover;
+}
+
+.row-gaming {
+  background-image: url('../../../images/gaming-zone.jpg');
+  transition: all .4s ease-in-out;
+}
+
+.row-gaming:hover {
+  transform: scale(1.01);
+}
+ 
+.row-menus {
+  background-image: url('../../../images/cofee.jpg');
+  transition: all .4s ease-in-out;
+}
+
+.row-menus:hover {
+  transform: scale(1.01);
+}
+
+.row-event {
+  background-image: url('../../../images/event.jpg');
+  transition: all .4s ease-in-out;
+  }
+
+.row-event:hover {
+  transform: scale(1.01);
+}
+
+
+.row-title {
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 639px) {
+
+  #row-images {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 2.5em;
+    color: white;
+  }
+  
+  .row-content {
+    display: flex;
+    flex-direction: column;
+    padding: 4em 2em;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .zone {
+    height: 18em;
+    background-size: cover;
+    margin-bottom: 2.5em;
+  }
+  
+  .row-gaming {
+    background-image: url('../../../images/gaming-zone.jpg');
+  }
+   
+  .row-menus {
+    background-image: url('../../../images/cofee.jpg');
+  }
+  
+  .row-event {
+    background-image: url('../../../images/event.jpg');
+    }
+  
+  
+  .row-title {
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-transform: capitalize;
+    }
+  }
+  
+  
